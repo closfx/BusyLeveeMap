@@ -1,0 +1,28 @@
+{
+  "productName": "Busy Levee Interactive Map",
+  "version": "1.0.0",
+  "description": "Busy Levee Interactive Map",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "build"
+  },
+  "keywords": [
+    "Aperture",
+    "Films"
+  ],
+  "author": "Aperture Films",
+  "license": "MIT",
+  "dependencies": {
+    "app-root-path": "^2.0.1",
+    "three": "^0.92.0"
+  },
+  "devDependencies": {
+    "electron": "^2.0.0"
+  },
+  "build": {
+
+  }
+  }
+
+}

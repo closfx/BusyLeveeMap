@@ -1,0 +1,8 @@
+Pyhton OBJ Convert > JSON CLI (THREE.JS SCRIPT)
+
+cd >
+
+python convert_obj_three.py -i filename.obj o- filename.js
+
+
+python convert_obj_three.py -i busy-levee-low-poly-city-joined.obj -o busy-levee-low-poly-city-joined.json
