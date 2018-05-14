@@ -5,24 +5,33 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "build"
+    "release:major": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
+    "release:minor": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
+    "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags"
   },
   "keywords": [
     "Aperture",
     "Films"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/closfx/BusyLeveeMap.git"
+  },
+  "build": {
+    "appID": "busy-levee-map",
+    "productName": "Busy Levee Interactive Map",
+    "icon": "/build/BusyLeveeIcon.ico"
+  },
   "author": "Aperture Films",
   "license": "MIT",
   "dependencies": {
     "app-root-path": "^2.0.1",
+    "electron-squirrel-startup": "^1.0.0",
     "three": "^0.92.0"
   },
   "devDependencies": {
-    "electron": "^2.0.0"
-  },
-  "build": {
-
+    "electron": "^2.0.0",
+    "electron-packager": "^12.0.2",
+    "generate-changelog": "^1.7.1"
   }
-  }
-
 }

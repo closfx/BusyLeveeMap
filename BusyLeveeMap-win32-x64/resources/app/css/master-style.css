@@ -1,0 +1,634 @@
+@font-face {
+    font-family: "Felbridge";
+    src: url("fonts/Felbridge Std Regular.otf");
+}
+
+body {
+    /* Set the background color of the HTML page to black */
+    background-image: url( '../img/busy-levee-bg-grey-80.jpg' );
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* Hide oversized content. This prevents the scroll bars. */
+    overflow: hidden;
+    /* Define the font and the color for the usage, which is an ordinary HTML overlay. */
+    font-family: Monospace;
+    color: white;
+    /* we want the whole screen so turn off padding and margins */
+    padding: 0;
+    margin: 0;
+}
+
+.dg.ac {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    z-index: 9500 !important;
+}
+
+ul, li, div {
+    background: hsla(0, 0%, 0%, 0);
+    border: 0;
+    font-size: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+    font: 13px/20px "Felbridge", "Arial", "Helvetica Neue", "Lucida Grande", sans-serif;
+}
+
+li {
+    display: list-item;
+}
+
+/* TOGGLE BTN CSS ------- */
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* Controls Switch BTNs */
+.controls-switch .button-wrap {
+    width: 90px;
+    margin: 10px auto 0;
+    cursor: pointer;
+    float: left;
+    display: inline-block;
+}
+
+.controls-switch .button-bg {
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    border-radius: 30px;
+    padding: 3px;
+    color: #999;
+    transition: all 0.2s ease;
+}
+
+.controls-switch .button-active .button-bg {
+    width: 100%;
+    height: 100%;
+    background-color: #ddd;
+    border-radius: 30px;
+    padding: 3px;
+    color: #393024;
+    transition: all 0.2s ease;
+}
+
+.controls-switch .button-switch {
+    position: relative;
+    left: 1px;
+    width: 30px;
+    height: 30px;
+    border: solid 1px;
+    background-color: #bbb;
+    border-radius: 15px;
+    transition: all 0.2s ease;
+}
+
+.controls-switch .button-active .button-switch {
+    position: relative;
+    left: 1px;
+    width: 30px;
+    height: 30px;
+    border: solid 1px;
+    background-color: #faf2e7;
+    border-radius: 15px;
+    transition: all 0.2s ease;
+}
+
+.controls-switch .button-active .button-switch {
+    left: 55px;
+}
+
+.controls-switch .button-in,
+.controls-switch .button-out {
+    position: absolute;
+    transition: all 0.2s ease;
+    padding-top: 8px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.controls-switch .button-label {
+    font-size: 1em;
+    text-align: center;
+    text-transform: none;
+    margin: 13px 0;
+}
+
+.controls-switch .button-in {
+    margin-left: 38px;
+}
+
+.controls-switch .button-out {
+    margin-left: 10px;
+}
+
+.controls-switch .button-active .button-out {
+}
+
+.controls-switch .button-active .button-in {
+}
+
+.controls-switch .button-active .button-bg {
+    background-color: #9a8363;
+}
+
+/*
+#btn-defaultControls, btn-firstPersonControls {
+	width:120px
+}
+*/
+
+#setControls {
+    z-index: 7000;
+    position: absolute;
+    bottom: 12%;
+    left: 20%;
+    width: 35%;
+    height: 100px;
+}
+
+#btn-defaultControls {
+    margin-left: 20px;
+}
+
+#btn-toggleControls {
+    margin: 10px 0;
+}
+
+#container {
+    position: relative;
+    top: 0;
+}
+
+.tabs-nav {
+    z-index: 8000;
+    position: absolute;
+    left: 30%;
+    width: 50%;
+    bottom: 12%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    .tabs-nav li:first-child a {
+        border-right: 0;
+    }
+
+    .tabs-nav .tab-active a {
+        background-image: url(../img/tabs-active-v2.png);
+        color: #ffffff;
+    }
+
+    .tabs-nav a {
+        background-image: url(../img/tabs-inactive-v2.png);
+        background-repeat: no-repeat;
+        background-position-x: center;
+        color: #000000;
+        display: block;
+        font-size: 24px;
+        font-weight: bold;
+        height: 60px;
+        line-height: 55px;
+        text-align: center;
+        text-decoration: none;
+        letter-spacing: 1px;
+        width: 0 auto;
+    }
+
+    .tabs-nav li {
+        z-index: 8500;
+        float: none;
+        display: inline-block;
+        width: 150px;
+        margin: 0 auto;
+    }
+
+        .tabs-nav li p {
+            font: 400 12px/16px "Felbridge", Arial, "Helvetica Neue", "Lucida Grande", sans-serif;
+            color: #848484;
+            text-align: center;
+            margin: 5px 0 20px 0;
+        }
+
+.tabs-stage {
+    clear: both;
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+}
+
+    .tabs-stage p {
+        margin: 0;
+        padding: 20px;
+        color: hsl(0, 0%, 33%);
+    }
+
+#boat07Target {
+    width: 100%;
+    height: 100%;
+    background-color: rgba( 0, 0, 0, 0.5 );
+}
+
+#tabs-stage-frame {
+    display: block;
+    float: none;
+    z-index: 8500;
+}
+
+    #tabs-stage-frame img {
+        width: 100%;
+        height: 100%;
+    }
+
+#leveeMap {
+    z-index: 5000;
+    width: 1200px;
+    height: 674px;
+    position: fixed;
+    top: 150px;
+    left: 50%;
+    margin-top: 0;
+    margin-left: -600px;
+    border: 10px solid #252525;
+    overflow: hidden;
+}
+
+
+.hidden {
+    visibility: hidden;
+}
+
+.shown {
+    visibility: visible;
+}
+
+#gestureLegend {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#target-icon {
+    z-index: 8000;
+    position: absolute;
+    bottom: 150px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+    #target-icon img {
+        margin: 0 10px;
+    }
+
+#leveeMap h1 {
+    background-color: rgba( 0, 0, 0, 0.7 );
+    z-index: 2000;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+    margin-right: 20px;
+    padding: 15px;
+    color: #ffffff;
+    font: 700 16px/20px "Felbridge", Arial, "Helvetica Neue", "Lucida Grande", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#videoContainer {
+    width: 100%;
+    height: 100%;
+}
+
+#video01 {
+    z-index: 9000;
+    width: 1200px;
+    height: 674px;
+    position: fixed;
+    top: 150px;
+    left: 50%;
+    margin-top: 0;
+    margin-left: -600px;
+    border: 10px solid #252525;
+    overflow: visible;
+}
+
+#video01Back {
+    float: left;
+    display: inline-grid;
+    margin: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+}
+
+#video01Next {
+    float: right;
+    display: inline-grid;
+    margin: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+}
+
+#stlouisVideo {
+    z-index: 2000;
+    position: relative;
+    left: -10px;
+    top: -10px;
+}
+
+
+#video01 h1 {
+    background-color: rgba( 0, 0, 0, 0.7 );
+    z-index: 2000;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    margin: 0 auto;
+    margin-right: 20px;
+    padding: 15px;
+    color: #ffffff;
+    font: 700 16px/20px "Felbridge", Arial, "Helvetica Neue", "Lucida Grande", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+#video-01-controls {
+    z-index: 9000;
+    position: relative;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    display: block;
+    margin: 0 auto;
+    width: 650px;
+    height: 123px;
+    background-color: transparent;
+}
+
+
+button {
+    background: transparent;
+    border: 0;
+    color: #EEE;
+    padding: 20px;
+    margin: 10px;
+    width: 90px;
+    height: 93px;
+}
+
+#seekBar01 {
+    height: 10px;
+    margin-bottom: 9px;
+    background-color: rgba( 250, 242, 231, 0.5 );
+    overflow: hidden;
+    position: absolute;
+    width: 500px;
+    z-index: 9000;
+    left: 100px;
+    display: block;
+    bottom: 50px;
+}
+
+    #seekBar01 span {
+        background-color: rgba( 250, 242, 231, 1.0 );
+        position: absolute;
+        z-index: 9000;
+        top: 0;
+        left: 0;
+        height: 10px;
+        width: 0px;
+    }
+
+#volume-bar-01 {
+    width: 60px;
+}
+
+#topIMG01 {
+    z-index: 7000;
+    position: absolute;
+    top: 250px;
+    left: 80px;
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+}
+
+#mapHilite01 img {
+    z-index: 6000;
+    position: absolute;
+    top: 170px;
+    left: 330px;
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+}
+
+#leveeMapIMG01 img {
+    z-index: 5000;
+    position: absolute;
+    top: 150px;
+    left: 100px;
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+}
+
+#cityscapeIMG01 {
+    z-index: 4000;
+    display: block;
+    position: absolute;
+    width: 1024px;
+    height: 576px;
+    position: fixed;
+    top: 200px;
+    left: 50%;
+    margin-top: 0;
+    margin-left: -512px;
+    border: 10px solid #252525;
+}
+
+#titleIMG {
+    z-index: 9500;
+    position: absolute;
+    display: block;
+    margin-left: -125px;
+    margin-top: 10px;
+    left: 50%;
+}
+
+#overlayContainer {
+    z-index: 9000;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.overlayBTN {
+    z-index: 9000;
+    margin: 0 auto;
+    padding: 0;
+    color: #ffffff;
+    font: 700 16px/20px "Felbridge", Arial, "Helvetica Neue", "Lucida Grande", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    left: 0;
+    margin-left: 375px;
+    width: 200px;
+    height: 150px;
+}
+
+.overlayDivider {
+    z-index: 9000;
+    margin: 0 auto;
+    padding: 5px 40px;
+    color: #000;
+    border-left: 2px solid #faf2e7;
+    border-right: 2px solid #faf2e7;
+    font: 400 12px/18px "Felbridge", Arial, "Helvetica Neue", "Lucida Grande", sans-serif;
+    text-transform: none;
+    letter-spacing: 1px;
+    left: 620px;
+    width: 680px;
+    height: 100px;
+    bottom: 15px;
+    display: block;
+    position: absolute;
+}
+
+.overlayText {
+    z-index: 9000;
+    margin: 0 auto;
+    padding: 5px 40px;
+    color: #000;
+    font: 400 12px/18px "Felbridge", Arial, "Helvetica Neue", "Lucida Grande", sans-serif;
+    text-transform: none;
+    letter-spacing: 1px;
+    left: 620px;
+    width: 680px;
+    height: 100px;
+    bottom: 15px;
+    display: block;
+    position: absolute;
+}
+
+.overlay h1 {
+    padding: 0;
+    color: #faf2e7;
+    font: 700 18px/20px "Felbridge", Arial, "Helvetica Neue", "Lucida Grande", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    margin: 20px 0;
+    display: block;
+    top: 50px;
+    text-align: center;
+    width: 300px;
+}
+
+.overlayText h2 {
+    padding: 0;
+    color: #faf2e7;
+    font: 700 14px/20px "Felbridge", Arial, "Helvetica Neue", "Lucida Grande", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    margin: 0 0 8px 0;
+    display: block;
+    top: 0;
+    text-align: center;
+}
+
+.overlayBTN a {
+    background-color: rgba( 0, 0, 0, 0.8 );
+    border: 2px solid #faf2e7;
+    margin: 15px auto;
+    padding: 15px 0;
+    text-decoration: none;
+    text-align: center;
+    top: 40px;
+    width: 100%;
+    position: relative;
+    display: block;
+    color: #faf2e7;
+}
+
+    .overlayBTN a.infoIcon {
+        background-color: transparent;
+        border: 0px solid #faf2e7;
+        margin: 0 auto;
+        padding: 15px;
+        text-decoration: none;
+        text-align: center;
+        top: 45px;
+        width: 50px;
+        position: relative;
+        display: block;
+        color: #faf2e7;
+    }
+
+.videoDivider {
+    z-index: 9000;
+    margin: 0 auto;
+    padding: 5px 40px;
+    color: #000;
+    border-left: 2px solid #faf2e7;
+    border-right: 2px solid #faf2e7;
+    font: 400 12px/18px "Felbridge", Arial, "Helvetica Neue", "Lucida Grande", sans-serif;
+    text-transform: none;
+    letter-spacing: 1px;
+    left: 150px;
+    width: 680px;
+    height: 100px;
+    bottom: -1px;
+    display: inline-grid;
+    position: relative;
+}
+
+.videoText {
+    z-index: 9000;
+    margin: 0 auto;
+    padding: 5px 40px;
+    color: #000;
+    font: 400 12px/18px "Felbridge", Arial, "Helvetica Neue", "Lucida Grande", sans-serif;
+    text-transform: none;
+    letter-spacing: 1px;
+    left: 150px;
+    width: 680px;
+    height: 100px;
+    bottom: -1px;
+    display: inline-grid;
+    position: relative;
+}
+
+    .videoText h2 {
+        padding: 0;
+        color: #faf2e7;
+        font: 700 14px/20px "Felbridge", Arial, "Helvetica Neue", "Lucida Grande", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        margin: 0;
+        display: block;
+        top: 0;
+        text-align: center;
+    }
